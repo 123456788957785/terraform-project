@@ -8,7 +8,7 @@ secret_key = "3Gvp7NjgPH320HkSGEXfLSq6al6+4WEM5D6IGBlY"
 resource "aws_instance" "one" {
   ami             = "ami-0453898e98046c639"
   instance_type   = "t2.micro"
-  key_name        = "terraform"
+  key_name        = "form"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1a"
   user_data       = <<EOF
@@ -27,7 +27,7 @@ EOF
 resource "aws_instance" "two" {
   ami             = "ami-0453898e98046c639"
   instance_type   = "t2.micro"
-  key_name        = "terraform"
+  key_name        = "form"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1b"
   user_data       = <<EOF
@@ -46,7 +46,7 @@ EOF
 resource "aws_instance" "three" {
   ami             = "ami-0453898e98046c639"
   instance_type   = "t2.micro"
-  key_name        = "terraform"
+  key_name        = "form"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1a"
   tags = {
@@ -57,7 +57,7 @@ resource "aws_instance" "three" {
 resource "aws_instance" "four" {
   ami             = "ami-0453898e98046c639"
   instance_type   = "t2.micro"
-  key_name        = "terraform"
+  key_name        = "form"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1b"
   tags = {
