@@ -1,16 +1,16 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "ap-northeast-1"
-access_key = "AKIAZDKWXZYHH3BRWSVX"
-secret_key = "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"
+region = "us-east-1"
+access_key = "AKIASIV4A7P6255V57U7"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-044dbe71ee2d3c59e"
+  ami             = "ami-0453898e98046c639"
   instance_type   = "t2.micro"
-  key_name        = "te"
+  key_name        = "terraform"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-northeast-1a"
+  availability_zone = "us-east-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -25,11 +25,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-044dbe71ee2d3c59e"
+  ami             = "ami-0453898e98046c639"
   instance_type   = "t2.micro"
-  key_name        = "te"
+  key_name        = "terraform"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-northeast-1b"
+  availability_zone = "us-east-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -44,22 +44,22 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-044dbe71ee2d3c59e"
+  ami             = "ami-0453898e98046c639"
   instance_type   = "t2.micro"
-  key_name        = "te"
+  key_name        = "terraform"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-northeast-1a"
+  availability_zone = "us-east-1a"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-044dbe71ee2d3c59e"
+  ami             = "ami-0453898e98046c639"
   instance_type   = "t2.micro"
-  key_name        = "te"
+  key_name        = "terraform"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-northeast-1b"
+  availability_zone = "us-east-1b"
   tags = {
     Name = "app-server-2"
   }
@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "terraform123"
+  bucket = "terraform123uihjudhkjdqekjjkd"
 }
 
 resource "aws_iam_user" "seven" {
@@ -105,7 +105,7 @@ default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "ap-northeast-1a"
+ availability_zone = "us-east-1a"
   size = 40
   tags = {
     Name = "ebs-001"
