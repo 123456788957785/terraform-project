@@ -66,7 +66,7 @@ resource "aws_instance" "four" {
 }
 
 resource "aws_security_group" "five" {
-  name = "elb-sg"
+  name = "sgr-oeb"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -108,6 +108,6 @@ resource "aws_ebs_volume" "eight" {
  availability_zone = "us-east-1a"
   size = 40
   tags = {
-    Name = "ebs-001"
+    Name = "ebs-002"
   }
 }
