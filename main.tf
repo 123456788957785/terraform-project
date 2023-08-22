@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "terraform123uihjudhkjdqekjjkd"
+  bucket = "abcd1345ygujhbygjhbmnkjuijk"
 }
 
 resource "aws_iam_user" "seven" {
