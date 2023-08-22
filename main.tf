@@ -1,16 +1,16 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "eu-west-3"
-access_key = ""
-secret_key = ""
+region = "ap-northeast-1"
+access_key = "AKIAZDKWXZYHH3BRWSVX"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-019f33d94f416763f"
+  ami             = "ami-044dbe71ee2d3c59e"
   instance_type   = "t2.micro"
-  key_name        = "vinay"
+  key_name        = "te"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-west-1"
+  availability_zone = "ap-northeast-1"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -25,11 +25,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-019f33d94f416763f"
+  ami             = "ami-044dbe71ee2d3c59e"
   instance_type   = "t2.micro"
-  key_name        = "vinay"
+  key_name        = "te"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-west-1"
+  availability_zone = "ap-northeast-1"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -44,22 +44,22 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-019f33d94f416763f"
+  ami             = "ami-044dbe71ee2d3c59e"
   instance_type   = "t2.micro"
-  key_name        = "vinay"
+  key_name        = "te"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-west-1"
+  availability_zone = "ap-northeast-1"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-019f33d94f416763f"
+  ami             = "ami-044dbe71ee2d3c59e"
   instance_type   = "t2.micro"
-  key_name        = "vinay"
+  key_name        = "te"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-west-1"
+  availability_zone = "ap-northeast-1"
   tags = {
     Name = "app-server-2"
   }
@@ -105,7 +105,7 @@ default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "us-west-1"
+ availability_zone = "ap-northeast-1"
   size = 40
   tags = {
     Name = "ebs-001"
